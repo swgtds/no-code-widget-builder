@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous Chat</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/@cometchat/chat-embed@1.x.x/dist/main.js"></script>
+</head>
+<body>
+    <!-- Where the chat widget should appear -->
+<div id="cometChatMount"></div>
+
+<script type="module">
+
+  //  EDIT ONLY THE TEXT INSIDE QUOTES
+  const COMETCHAT_WIDGET_CONFIG = {
+    appID: "",
+    region: "IN",   // e.g. "us", "eu", "in"
+    mode: "guest",               // keep this as "guest"
+    authKey: "30b8ed1aeff456bc57de6b1d7e5a8dd7ea5464bc",
+
+    // Optional: how the guest appears in chat
+    user: {
+      name: "Guest User",
+      avatar: "",                // e.g. "https://example.com/guest.png"
+      link: ""                   // e.g. "https://example.com/profile"
+    },
+
+    // Widget placement + size
+    mount: "#cometChatMount",
+    width: "450px",
+    height: "80vh",
+    isDocked: true,               // true = docked widget (recommended)
+    //variantID: "YOUR_VARIANT_ID",
+    //chatType: "user" | "group",
+    //defaultChatID: "uid_or_guid",
+    //dockedAlignment: "left" | "right"
+  };
+
+  CometChatApp.CometChatAuth.start(COMETCHAT_WIDGET_CONFIG);
+</script>
+</body>
+</html>
